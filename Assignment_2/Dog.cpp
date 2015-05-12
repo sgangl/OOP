@@ -1,6 +1,5 @@
 #include "Dog.h"
-
-using namespace std;
+#include <iostream>
 
 Dog::Dog()
 {
@@ -12,52 +11,54 @@ Dog::Dog()
 	owner = "NONE";
 }
 
-string Dog::getName()
+std::string Dog::getName() const
 {
 	return name;
 }
 
-bool Dog::getHasShots()
+bool Dog::getHasShots() const
 {
-	return hasShots();
+	return hasShots;
 }
 
-string Dog::getBreed()
+std::string Dog::getBreed() const
 {
 	return breed;
 }
 
-int Dog::getAge()
+int Dog::getAge() const
 {
 	return age;
 }
 
-int Dog::getTagNumber()
+int Dog::getTagNumber() const
 {
 	return tagNumber;
 }
 
-string Dog::getOwner()
+std::string Dog::getOwner() const
 {
 	return owner;
 }
 
-void Dog::setName(const string& nuName)
+void Dog::setName(const std::string& nuName)
 {
 	name = nuName;
 }
 
-void Dog::setHasShots(const string& nuHasShots)
+void Dog::setHasShots(const bool& nuHasShots)
 {
 	hasShots = nuHasShots;
 }
 
-void Dog::setBreed(const string& nuBreed)
+void Dog::setBreed(const std::string& nuBreed)
 {
+	breed = nuBreed;
 }
 
 void Dog::setAge(const int& nuAge)
 {
+	age = nuAge;
 }
 
 void Dog::setTagNumber(const int& nuTagNumber)
@@ -65,18 +66,18 @@ void Dog::setTagNumber(const int& nuTagNumber)
 	tagNumber = nuTagNumber;
 }
 
-void Dog::setOwner(const string& nuOwner)
+void Dog::setOwner(const std::string& nuOwner)
 {
 	owner = nuOwner;
 }
 
 void Dog::printDog() const
 {
-	cout << "This is " << name;
-	cout << ". " << name " is a " << breed << endl;
-	cout << name << " is owned by " << owner;
-	if (hasShots) cout << " and has had its shots." << endl;
-	else cout << " and has not had his shots." << endl;
-	cout << name << " is " << age << " years old.";
-	cout << " " << name "'s registration number is: " << tagNumber << endl;
+	std::cout << "This is " << name;
+	std::cout << ". " << name << " is a " << breed << std::endl;
+	std::cout << name << " is owned by " << owner;
+	if (hasShots) std::cout << " and has had its shots." << std::endl;
+	else std::cout << " and has not had his shots." << std::endl;
+	std::cout << name << " is " << age << " years old.";
+	std::cout << " " << name << "'s registration number is: " << tagNumber << std::endl;
 }

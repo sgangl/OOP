@@ -1,19 +1,20 @@
 #pragma once
+#include <string>
 
 class Dog
 {
 public:
 	Dog();
-	std::string getName();
-	bool getHasShots();
-	std::string getBreed();
-	int getAge();
-	int getTagNumber();
-	std::string getOwner();
-	void setName(const int& nuName);
+	std::string getName() const;
+	bool getHasShots() const;
+	std::string getBreed() const;
+	int getAge() const;
+	int getTagNumber() const;
+	std::string getOwner() const;
+	void setName(const std::string& nuName);
 	void setHasShots(const bool& nuHasShots);
 	void setBreed(const std::string& nuBreed);
-	void setAge(cosnt int& nuAge);
+	void setAge(const int& nuAge);
 	void setTagNumber(const int& nuTagNumber);
 	void setOwner(const std::string& nuOwner);
 	void printDog() const;
@@ -24,4 +25,4 @@ private:
 	int age;
 	int tagNumber;
 	std::string owner;
-}
+};
